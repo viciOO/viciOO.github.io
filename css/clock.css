@@ -26,8 +26,113 @@ body {
   background-blend-mode: multiply,multiply;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.bounce-content {
+}
+
+.ball-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: up 0.55s ease-out alternate-reverse infinite;
+}
+.ball {
+    width: 80px;
+    height: 80px;
+    /* background: rgb(247, 151, 43); */
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    /* background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%); */
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 2px 3px honeydew;
+
+    animation: ro 3s linear infinite;
+
+}
+
+.ball::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #fcfcfc;
+    left: -67%;
+    filter: blur(0.5px);
+}
+.ball::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #fcfcfc;
+    left: 67%;
+    filter: blur(0.5px);
+}
+.a {
+    width: 200px;
+    height: 5px;
+    background: #fcfcfc;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.b {
+    width: 5px;
+    height: 200px;
+    background: #fcfcfc;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.ball-shadow {
+    align-self: flex-end;
+    width: 80px;
+    height: 5px;
+    border-radius: 25%;
+    margin-bottom: 60px;
+    margin-top: 100px;
+    background: rgba(56, 56, 56 ,0.7);
+    z-index: 0;
+    animation: shadow 0.55s ease-out alternate-reverse infinite;
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(95%);
+    }
+    100% {
+        transform: translateY(-90%);
+    }
+}
+
+@keyframes ro {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shadow {
+    0% {
+        transform: scale3d(0.15, 1.25, 1);
+    }
+    100% {
+        transform: scale3d(1.25, 1.25, 1);
+    }
 }
 
 .flip-clock-container {
