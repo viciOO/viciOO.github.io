@@ -52,7 +52,6 @@
         now.m1 = now.m[1];
         now.s0 = now.s[0];
         now.s1 = now.s[1];
-        console.log(`${now.h0}${now.h1}:${now.m0}${now.m1}:${now.s0}${now.s1}`);
   
         for (const t of Object.keys(els)) {
           for (const i of ['0', '1']) {
