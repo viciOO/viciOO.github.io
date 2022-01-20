@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-  
+
     const els = {
       s: initElements('s'),
       m: initElements('m'),
